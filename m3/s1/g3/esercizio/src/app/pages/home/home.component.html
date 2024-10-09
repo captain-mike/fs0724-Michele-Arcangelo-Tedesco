@@ -1,0 +1,41 @@
+
+<h2>Post in evidenza</h2>
+
+<div>
+
+  <div class="card" *ngIf="featuredPost">
+    <div class="card-body">
+      <h5 class="card-title">{{featuredPost.title}}</h5>
+      <p class="card-text">{{featuredPost.body}}</p>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let tag of featuredPost.tags" class="list-group-item">{{tag}}</li>
+      </ul>
+      <a href="#" class="btn btn-primary">Leggi</a>
+    </div>
+  </div>
+
+</div>
+
+
+<h2>Potrebbe interessarti anche</h2>
+
+
+<div class="row">
+
+  <ng-container *ngFor="let post of postArr">
+    <div class="col-12 col-lg-4">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.body}}</p>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let tag of post.tags" class="list-group-item">{{tag}}</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Leggi</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>
