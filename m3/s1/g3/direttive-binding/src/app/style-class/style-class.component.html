@@ -1,3 +1,4 @@
+<!-- Il primo esempio mostra come accedendo alla Proprietà class posso assegnare e mettere in relazione a dei booleani determinate classi. L'esempio qui sotto dimostra come ogni volta che la variabile isAccess è false, la classe alert-danger verrà inserita mentre in caso isSuccess sia true sarà la variabile alert-success ad essere inserita. -->
 <div
 (mouseover)="isSuccess = !isSuccess"
 class="alert"
@@ -8,6 +9,7 @@ class="alert"
 </div>
 
 
+<!-- Il secondo esempio mostra come fare la stessa cosa eseguita nel primo esempio, ma in maniera molto più compatta, utilizzando la direttiva non strutturale built-in di Angular chiamata ngClass.  -->
 <div
 (mouseover)="isSuccess = !isSuccess"
 [ngClass]="{
@@ -19,7 +21,9 @@ class="alert"
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste, officia vero, laudantium a quis voluptate quaerat quos impedit minus modi! Similique quia reiciendis blanditiis suscipit. Eveniet voluptates velit veritatis!
 </div>
 
-
+<!-- ngStyle permette di utilizzare un Normale oggetto javascript per passare diverse regole di stile direttamente all'elemento del DOM. Ma attenzione perché questo tipo di operazione va ad applicare un attributo style inline, quindi è consigliato utilizzarlo solo nel caso in cui i valori assegnati alle proprietà CSS siano dinamici.
+ Se invece vuoi applicare degli stili che non cambieranno o che comunque non sono dinamici, devi sempre utilizzare il css o l'scss del componente.
+-->
 <p
 [ngStyle]="{
   'background-color': color,

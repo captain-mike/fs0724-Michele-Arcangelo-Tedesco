@@ -1,8 +1,10 @@
 
 <ul>
+  <!-- In questo caso ing for creerà un li con tutto il suo contenuto per ogni pizza presente nell'array pizze.  -->
   <li *ngFor="let pizza of pizze">
     gusto: {{pizza.gusto}}<br>
     prezzo: {{pizza.prezzo}}
+    <!-- All'interno di ogni li sarà presente un bottone che al click lancerà il metodo di l'ith presente nel TS del componente. Il metodo delete richiede come argomento l'id della pizza da eliminare -->
     <button (click)="delete(pizza.id)">Elimina</button>
   </li>
 </ul>

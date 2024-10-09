@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class PropComponent {
 
-  contenuto:string = '<b>Ciao</b>'
+  contenuto:string = '<b>Ciao</b>'//Questa stringa contiene anche dei tag HTML.
   color:string = 'red'
 
   visible:boolean = true
 
+  //Un metodo che ogni volta che viene lanciato inverte il valore booleano della proprietà visible.
   toggle(){
     this.visible = !this.visible
   }

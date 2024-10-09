@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AttributiComponent {
 
+  //le proprietà e i metodi che creo nella classe saranno utilizzabili per l'interpolazione o il binding lato html
   numero:number = 0
   stringa:string = 'Mario'
   array:string[] = ['a','b','c','d','e','f']

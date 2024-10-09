@@ -1,16 +1,22 @@
 <!-- Posso accedere alle proprietà degli oggetti del DOM per manipolare l'elemento  -->
+<!-- Utilizzo in HTML per visualizzare il contenuto della proprietà contenuto Renderizzando anche le parti di HTML presenti nella stringa  -->
 <p
 [innerHTML]="contenuto"
 [style.color] = "color"
-></p>
+>
+<!-- Con la dicitura style.color sto di fatto accedendo alla proprietà color dell'oggetto style presente nell'oggetto DOM  -->
+</p>
 
+
+<!-- Ogni volta che cliccherò su questo bottone la proprietà toggle invertirà il valore booleano della proprietà visible e grazie all'utilizzo del ternario il valore passato ad innerHTML sarà diverso ogni volta, in questo modo avremo un testo del bottone diverso ad ogni click, in base allo stato della variabile visible.  -->
 <button
 (click)="toggle()"
 [innerHTML]="visible ? 'Nascondi' : 'Mostra'"
 class="btn btn-primary"></button>
 {{visible}}
 
-
+<!-- La direttiva strutturale NGIF si comporterà come un normale if nel ricevere un booleano, e si aspetterà che questo sia positivo. Se di fatto questo è positivo, andrà a creare il Div a cui è assegnato mostrandolo all'utente, in caso invece visible contenga un valore negativo il Div non verrà creato e visualizzato.
+ -->
 <div *ngIf="visible">
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni atque deserunt sed perspiciatis cum ipsam! Quam ullam, corrupti necessitatibus nihil ducimus perspiciatis ad voluptatibus tempore corporis commodi adipisci inventore officia!
 </div>

@@ -1,9 +1,18 @@
 
 <form>
 
+  <!--Per poter usare ngModel, ti devi ricordare di importare Forms all'interno del modulo (app.module) -->
+
+  <!--
+  La proprietà value non verrà più utilizzata all'interno di Angular e andiamo ad utilizzare invece ngModel.
+
+  ngModel Permette di effettuare il two-way data binding.
+  Quindi andrà a inserire il valore legato alla proprietà, nome all'interno del campo input, rendendo il valore della suddetta proprietà visibile e modificabile dall'utente.
+  Allo stesso tempo, se l'utente scriverà nel campo nome, tutte le modifiche al suo valore verranno Trasmesse alla proprietà nome
+  -->
   <input name="nome" type="text" [(ngModel)]="nome">
 
 </form>
 
-
+<!--Scrivendo nel campo input, potrai osservare che il valore presente nella variabile qui sotto richiamata rispecchierà le modifiche che avrai effettuato -->
 {{nome}}

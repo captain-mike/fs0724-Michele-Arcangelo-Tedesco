@@ -1,10 +1,10 @@
 
 <div>
 
-  numero : {{numero}}<br>
-  stringa : {{stringa}}<br>
-  array: {{array}}<br>
-  oggetto: {{oggetto.prop1}}<br>
+  numero : {{numero}}<br><!--essendo un dato di tipo number posso interpolarlo osservendo una corretta conversione in stringa -->
+  stringa : {{stringa}}<br><!--essendo un dato di tipo string posso interpolarlo osservendo una corretta conversione in stringa -->
+  array: {{array}}<br><!--essendo un dato di tipo array posso interpolarlo osservendo una corretta conversione in stringa -->
+  oggetto: {{oggetto.prop1}}<br> <!--Gli oggetti non sono direttamente convertibili in stringa, di conseguenza dovrò selezionare una delle proprietà per avere una corretta interpolazione. Se non seleziono una proprietà, vedrò a schermo la dicitura [object object]. -->
 
 </div>
 
@@ -14,6 +14,7 @@
   <img [src]="image">
 
   <h3>carosello</h3>
+  <!-- Lato tipscript potrai osservare che la proprietà current image viene aggiornata ogni tre secondi andando di fatto a visualizzare un'immagine diversa ogni volta  -->
   <img [src]="currentImage">
   <p>indice {{this.indice}}</p>
 
