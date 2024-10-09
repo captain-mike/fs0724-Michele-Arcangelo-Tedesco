@@ -1,0 +1,30 @@
+<div
+(mouseover)="isSuccess = !isSuccess"
+class="alert"
+[class.alert-danger]="!isSuccess"
+[class.alert-success]="isSuccess"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste, officia vero, laudantium a quis voluptate quaerat quos impedit minus modi! Similique quia reiciendis blanditiis suscipit. Eveniet voluptates velit veritatis!
+</div>
+
+
+<div
+(mouseover)="isSuccess = !isSuccess"
+[ngClass]="{
+  'alert':true,
+  'alert-danger':!isSuccess,
+  'alert-success':isSuccess
+}"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste, officia vero, laudantium a quis voluptate quaerat quos impedit minus modi! Similique quia reiciendis blanditiis suscipit. Eveniet voluptates velit veritatis!
+</div>
+
+
+<p
+[ngStyle]="{
+  'background-color': color,
+  'outline': '1px solid ' + color
+}"
+>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum expedita est architecto excepturi quo ullam minima quaerat magni veritatis ea dolore ipsa mollitia veniam officia animi magnam, iste provident tempora.
+</p>

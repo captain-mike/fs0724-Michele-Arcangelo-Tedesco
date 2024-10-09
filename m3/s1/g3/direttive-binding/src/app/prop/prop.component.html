@@ -1,0 +1,16 @@
+<!-- Posso accedere alle proprietà degli oggetti del DOM per manipolare l'elemento  -->
+<p
+[innerHTML]="contenuto"
+[style.color] = "color"
+></p>
+
+<button
+(click)="toggle()"
+[innerHTML]="visible ? 'Nascondi' : 'Mostra'"
+class="btn btn-primary"></button>
+{{visible}}
+
+
+<div *ngIf="visible">
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni atque deserunt sed perspiciatis cum ipsam! Quam ullam, corrupti necessitatibus nihil ducimus perspiciatis ad voluptatibus tempore corporis commodi adipisci inventore officia!
+</div>

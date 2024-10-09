@@ -1,0 +1,8 @@
+
+<ul>
+  <li *ngFor="let pizza of pizze">
+    gusto: {{pizza.gusto}}<br>
+    prezzo: {{pizza.prezzo}}
+    <button (click)="delete(pizza.id)">Elimina</button>
+  </li>
+</ul>
