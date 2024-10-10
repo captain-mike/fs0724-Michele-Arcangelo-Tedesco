@@ -1,0 +1,25 @@
+
+
+<table class="table">
+
+  <tr>
+    <th>#</th>
+    <th>gusto</th>
+    <th>prezzo</th>
+    <th>disponibile</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let pizza of pizzeArr; let i = index">
+
+    <td>{{i + 1}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo | currency : 'EUR' }}</td>
+    <td>{{pizza.disp ? 'si' : 'no'}}</td>
+    <td>
+      <button [routerLink]="['/dettaglio',pizza.id]" class="btn btn-info">Dettaglio</button>
+    </td>
+
+  </tr>
+
+
+</table>
