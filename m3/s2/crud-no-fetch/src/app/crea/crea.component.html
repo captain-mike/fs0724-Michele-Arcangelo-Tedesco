@@ -1,0 +1,26 @@
+<form>
+
+  <input
+  [(ngModel)]="newPizza.id"
+  type="number"
+  name="id"
+  class="form-control">
+
+  <input
+  [(ngModel)]="newPizza.gusto"
+  type="text"
+  name="gusto"
+  class="form-control">
+
+  <input
+  [(ngModel)]="newPizza.prezzo"
+  type="number"
+  name="prezzo"
+  class="form-control">
+
+  <button
+  (click)="create()"
+  class="btn btn-primary"
+  >Salva</button>
+
+</form>

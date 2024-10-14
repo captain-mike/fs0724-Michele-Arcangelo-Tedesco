@@ -1,0 +1,19 @@
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let pizza of pizze; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+    <td>
+      <button
+      class="btn btn-danger"
+      (click)="delete(pizza.id)"
+      >Elimina</button>
+    </td>
+  </tr>
+</table>

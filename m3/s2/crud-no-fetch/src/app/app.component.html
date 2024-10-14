@@ -1,0 +1,13 @@
+<h1>Gestisci le pizze</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-lista [pizze]="pizze" (onDeleteRequest)="deletePizza($event)"></app-lista>
+    </div>
+    <div class="col-12">
+     <app-crea (onCreateRequest)="createPizza($event)"></app-crea>
+    </div>
+  </div>
+</div>
