@@ -1,0 +1,14 @@
+<h1>Post attivi</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6" *ngFor="let post of postArr">
+      <app-single-post [post]="post">
+        <form class="alert alert-warning">
+          <input type="text" class="form-control" [(ngModel)]="post.title" name="title">
+          <textarea name="body" class="form-control" [(ngModel)]="post.body"></textarea>
+          <input type="checkbox" class="form-control" name="active" [(ngModel)]="post.active">
+        </form>
+      </app-single-post>
+    </div>
+  </div>
+</div>

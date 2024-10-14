@@ -1,0 +1,8 @@
+<h1>Post inattivi</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6" *ngFor="let post of postArr">
+      <app-single-post [post]="post"></app-single-post>
+    </div>
+  </div>
+</div>

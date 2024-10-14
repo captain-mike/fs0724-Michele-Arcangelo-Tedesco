@@ -1,0 +1,24 @@
+
+<h2>Post in evidenza</h2>
+
+<div>
+
+  <app-single-post [post]="featuredPost"></app-single-post>
+
+</div>
+
+
+<h2>Potrebbe interessarti anche</h2>
+
+
+<div class="row">
+
+  <ng-container *ngFor="let post of postArr">
+    <div class="col-12 col-lg-4">
+
+      <app-single-post [post]="post"></app-single-post>
+
+    </div>
+  </ng-container>
+
+</div>
