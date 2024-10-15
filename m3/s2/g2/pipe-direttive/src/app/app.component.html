@@ -1,0 +1,21 @@
+<h2>Direttive</h2>
+<p appColora colore="#000">Elemento con direttiva</p>
+<p appColora colore="green">Elemento con direttiva</p>
+
+<hr>
+
+<h2>Pipes</h2>
+
+{{pizza | json}}
+<hr>
+{{pizza.prezzo | currency : 'INR' : 'code' }}
+<hr>
+{{oggi | date : 'dd/MM'}}/<b>{{oggi | date : 'yy'}}</b>
+
+<br>
+
+{{getLocaleDate()}}
+
+<hr>
+
+{{testo | cut}}
