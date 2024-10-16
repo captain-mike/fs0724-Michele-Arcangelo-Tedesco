@@ -1,0 +1,14 @@
+{
+  "pizze": [
+    {
+      "gusto": "Ullamco dolorem mini",
+      "prezzo": 33,
+      "id": 1
+    },
+    {
+      "gusto": "Margherita",
+      "prezzo": 5,
+      "id": 4
+    }
+  ]
+}

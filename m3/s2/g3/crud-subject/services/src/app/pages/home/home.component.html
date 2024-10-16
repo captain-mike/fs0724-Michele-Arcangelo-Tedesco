@@ -1,0 +1,33 @@
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>gusto</th>
+    <th>prezzo</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let pizza of pizze; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+    <td>
+      <button (click)="like(pizza)" class="btn btn-info">Like</button>
+      <button (click)="delete(pizza.id)" class="btn btn-danger">elimina</button>
+      <button
+      [routerLink]="['/edit-pizza',pizza.id]"
+      class="btn btn-warning">Modifica</button>
+    </td>
+  </tr>
+</table>
+
+<h2>Pizze preferite</h2>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col" *ngFor="let pref of preferiti">
+      {{pref.gusto}} <br>
+      {{pref.prezzo}}
+    </div>
+  </div>
+
+</div>

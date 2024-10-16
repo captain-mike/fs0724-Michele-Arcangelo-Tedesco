@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { catchError, filter, map, Observable, Subscription, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-page1',
@@ -34,7 +34,12 @@ export class Page1Component {
     })
 
 
-    this.sub = intervallo.subscribe({
+    this.sub = intervallo
+    .pipe(
+      filter(n => n > 0),
+      map(n => `Siamo al numero: ${n}`),
+    )
+    .subscribe({
       next:datiInviati => {
         console.log(datiInviati);
       },
