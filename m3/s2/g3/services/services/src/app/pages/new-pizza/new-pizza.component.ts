@@ -22,14 +22,7 @@ export class NewPizzaComponent {
 
 
   save(){
-    this.pizzaSvc.createPizza(this.newPizza)
-    .then(pizza => {
-      this.isSuccess = true;
-      this.router.navigate(['/'])//redirect forzato
-    })
-    .catch(err => {
-      this.isError = true;
-    })
+
   }
 
 }

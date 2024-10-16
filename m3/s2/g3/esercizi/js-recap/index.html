@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+    <div id="test4"></div>
+    <div id="test5"></div>
+
+    <script>
+
+        function scrivi(selettore, testo, fn){
+            const target = document.querySelector(selettore)
+            target.innerHTML = fn(testo)
+        }
+
+        function grassetto(testo){
+            return `<b>${testo}</b>`
+        }
+        function corsivo(testo){
+            return `<i>${testo}</i>`
+        }
+
+        scrivi('#test1','Primo Elemento',grassetto)
+        scrivi('#test2','Secondo Elemento',corsivo)
+
+
+
+        function scriviPro(selettore, fn){
+            const target = document.querySelector(selettore)
+            target.innerHTML = fn('ciao')
+        }
+
+        scriviPro('#test3',testo =>{
+            console.log(testo);
+            return testo            
+        })
+
+    </script>
+</body>
+</html>
