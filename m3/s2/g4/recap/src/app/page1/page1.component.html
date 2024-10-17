@@ -1,0 +1,9 @@
+<div *ngFor="let pizza of pizze">
+  <hr>
+  {{pizza.gusto}} <br>
+
+  {{pizza.pizzaioloName}}
+
+  <input type="text" [(ngModel)]="pizza.gusto">
+  <hr>
+</div>
