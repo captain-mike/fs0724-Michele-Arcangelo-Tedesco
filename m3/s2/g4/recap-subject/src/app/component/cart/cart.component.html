@@ -1,0 +1,11 @@
+<div class="dropdown text-end">
+  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+  </a>
+
+  <ul class="dropdown-menu text-small show"  data-popper-placement="bottom-start">
+    <li *ngFor="let product of cart">
+        {{product.title}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6" *ngFor="let prod of products">
+      <div class="card">
+        <img [src]="prod.thumbnail"
+        class="card-img-top" [alt]="prod.title">
+        <div class="card-body">
+          <h5 class="card-title">{{prod.title}}</h5>
+          <p class="card-text">{{prod.description}}</p>
+          <button (click)="addToCart(prod)" class="btn btn-primary">Carrello</button>
+          <button (click)="addToFav(prod)" class="btn btn-primary">Preferiti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
