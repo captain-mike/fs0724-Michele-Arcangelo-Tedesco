@@ -1,0 +1,25 @@
+<form>
+
+  <input
+  type="text"
+  name="gusto"
+  [(ngModel)]="newPizza.gusto"
+  class="form-control">
+
+  <input
+  type="number"
+  name="prezzo"
+  [(ngModel)]="newPizza.prezzo"
+  class="form-control">
+
+  <button (click)="save()" class="btn btn-primary">Crea pizza</button>
+
+</form>
+
+<div *ngIf="isSuccess" class="alert alert-success">
+  Pizza creata con successo
+</div>
+
+<div *ngIf="isError" class="alert alert-danger">
+  Errore nella richiesta
+</div>
