@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TeamComponent } from './team/team.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { ChiSiamoRoutingModule } from './chi-siamo-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { ChiSiamoRoutingModule } from './chi-siamo-routing.module';
   ],
   imports: [
     CommonModule,
-    ChiSiamoRoutingModule
+    ChiSiamoRoutingModule,
+    SharedModule
   ]
 })
 export class ChiSiamoModule { }
