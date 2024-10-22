@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -20,7 +20,8 @@ export class ReactiveFormsComponent {
       authData: this.fb.group({
         email: this.fb.control(//campo e-mail
           '',//valore del campo
-          [Validators.required,Validators.email, this.emailProibiteValidator]//validatori sincroni
+          [Validators.required,Validators.email, this.emailProibiteValidator],//validatori sincroni
+          this.emailEsistente//validatore asincrono
         ),
         password: this.fb.control('')//il campo password
       })
@@ -70,6 +71,28 @@ export class ReactiveFormsComponent {
 
     return null;//altrimnenti restituisce null
     //null significa che non ci sono errori di inserimento da parte dell'utente
+
+  }
+
+
+  emailEsistente = (formC:AbstractControl) => {
+
+    return new Promise<ValidationErrors|null>((resolve, reject)=>{
+
+      setTimeout(() => {
+
+        if(formC.value === 'prova@test.it'){
+          resolve({
+            invalid:true,
+            message:'Email già presente'
+          })
+        }else{
+          reject(null)
+        }
+
+      },2000)
+
+    })
 
   }
 

@@ -30,7 +30,9 @@
       >
     </div>
     <!--se si attiva la validazione per il campo email, riceviamo un messaggio. Se presente questo viene mostrato-->
-    <span *ngIf="getMessage('authData.email')">{{getMessage('authData.email')}}</span>
+    <span *ngIf="getMessage('authData.email')">
+      {{getMessage('authData.email')}}
+    </span>
 
     <div class="form-group col6">
       <input
