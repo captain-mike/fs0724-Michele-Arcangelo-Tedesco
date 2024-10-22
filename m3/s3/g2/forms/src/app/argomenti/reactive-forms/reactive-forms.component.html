@@ -1,15 +1,26 @@
+<!--[formGroup]="form" collega l'attuale form alla prop form del ts del componente-->
 <form [formGroup]="form">
   <div class="form-group">
+    <!--i reactive forms non usano ngModel e name, si servono della direttiva formControlName-->
     <input
     type="text"
     placeholder="nome"
     formControlName="nome"
     class="form-control"
     >
+        <!--controlla cosa fa isInValidTouched dal ts del componente-->
+
     <span *ngIf="isInValidTouched('nome')">Devi inserire il nome</span>
   </div>
 
   <div formGroupName="authData" class="form-row row">
+    <!--formGroupName crea un nuovo gruppo chiamato authData che rappresenta una diramazione nel formato dei dati inviati da questo form
+      form : {
+        authData : {
+          email : campo,
+          password : campo
+        }
+  }-->
     <div class="form-group col6">
       <input
       type="email"
@@ -18,6 +29,7 @@
       formControlName="email"
       >
     </div>
+    <!--se si attiva la validazione per il campo email, riceviamo un messaggio. Se presente questo viene mostrato-->
     <span *ngIf="getMessage('authData.email')">{{getMessage('authData.email')}}</span>
 
     <div class="form-group col6">

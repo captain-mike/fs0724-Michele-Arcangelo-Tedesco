@@ -11,21 +11,24 @@ export class ReactiveFormsComponent {
   form!:FormGroup
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder//formBuilder permette di creare forms reattivi
   ){}
 
   ngOnInit(){
-    this.form = this.fb.group({
-      nome: this.fb.control('', [Validators.required]),
+    this.form = this.fb.group({//il form
+      nome: this.fb.control('', [Validators.required]),//campo nome
       authData: this.fb.group({
-        email: this.fb.control('',[Validators.required,Validators.email, this.emailProibiteValidator]),
-        password: this.fb.control('')
+        email: this.fb.control(//campo e-mail
+          '',//valore del campo
+          [Validators.required,Validators.email, this.emailProibiteValidator]//validatori sincroni
+        ),
+        password: this.fb.control('')//il campo password
       })
     })
   }
 
   send(){
-    console.log(this.form.value);
+    console.log(this.form.value);//mostra i valori inseriti
     this.getMessage('nome')
     this.getMessage('authData.email')
   }
@@ -34,35 +37,39 @@ export class ReactiveFormsComponent {
    * metodi per validazione booleani
    */
 
-  isValid(fieldName:string){
-    return this.form.get(fieldName)?.valid
-  }
+  isValid(fieldName: string) {
+    return this.form.get(fieldName)?.valid //true se il campo cercato è valido
+   }
+   isTouched(fieldName: string) {
+     return this.form.get(fieldName)?.touched //true se il campo cercato ha subito interazioni dall'utente
+   }
 
-  isTouched(fieldName:string){
-    return this.form.get(fieldName)?.touched
-  }
+   getMessage(fieldName: string) {
+       return this.form.get(fieldName)?.errors!['message']//restituisce il messaggio di errore dei custom validators
+   }
 
   isInValidTouched(fieldName:string){
     return !this.isValid(fieldName) && this.isTouched(fieldName)
   }
 
-  getMessage(fieldName:string){
-    return this.form.get(fieldName)?.errors!['message']
-  }
 
 
-  emailProibite:string[] = ['andrea.ceccarelli@esempio.it','gianmarco@esempio.it','federico.peralta@esempio.it']
 
-  emailProibiteValidator = (formC:FormControl):ValidationErrors|null =>{
+  emailProibite:string[] = ['mario@gmail.com','mirko@gmail.com'];
 
-    if(this.emailProibite.includes(formC.value)){
-      return {
+  //validatore custom sincrono
+  //verifica l'inserimento di e-mails presenti nell'array della riga 85
+  emailProibiteValidator = (formC:FormControl):ValidationErrors|null => {//formC sarà il campo a cui si collega il validatore
+
+    if(this.emailProibite.includes(formC.value)){//se la mail inserita dall'utente viene trovata anche nell'array della riga 85
+      return {//restituisce un oggetto contenente dettagli della validazione
         invalid:true,
         message:'Email non utilizzabile'
       }
     }
 
-    return null
+    return null;//altrimnenti restituisce null
+    //null significa che non ci sono errori di inserimento da parte dell'utente
 
   }
 
