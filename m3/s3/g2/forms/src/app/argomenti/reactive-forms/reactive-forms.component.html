@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <input
+    type="text"
+    placeholder="nome"
+    formControlName="nome"
+    class="form-control"
+    >
+    <span *ngIf="isInValidTouched('nome')">Devi inserire il nome</span>
+  </div>
+
+  <div formGroupName="authData" class="form-row row">
+    <div class="form-group col6">
+      <input
+      type="email"
+      placeholder="email"
+      class="form-control"
+      formControlName="email"
+      >
+    </div>
+    <span *ngIf="getMessage('authData.email')">{{getMessage('authData.email')}}</span>
+
+    <div class="form-group col6">
+      <input
+      type="password"
+      placeholder="password"
+      class="form-control"
+      formControlName="password"
+      >
+    </div>
+    <span *ngIf="">Dati non corretti</span>
+  </div>
+
+
+
+    <button [disabled]="" (click)="send()"  class="btn btn-primary">invia</button>
+
+</form>
+

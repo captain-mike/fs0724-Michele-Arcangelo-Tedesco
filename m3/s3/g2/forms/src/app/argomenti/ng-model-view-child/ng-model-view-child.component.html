@@ -1,0 +1,86 @@
+<form (ngSubmit)="submit(f)" #f="ngForm">
+  <div class="form-group">
+    <input
+    type="text"
+    placeholder="nome"
+    name="nome"
+    ngModel
+    class="form-control"
+    required
+    #nome="ngModel"
+    >
+    <span *ngIf="nome.invalid && nome.touched">Devi inserire il nome</span>
+  </div>
+
+  <div class="form-group">
+    <input
+    type="text"
+    placeholder="cognome"
+    name="cognome"
+    ngModel
+    class="form-control"
+    required
+    #cognome="ngModel"
+    >
+    <span *ngIf="cognome.invalid && cognome.touched">Devi inserire il cognome</span>
+  </div>
+
+  <div ngModelGroup="authData" #authGroup="ngModelGroup" class="form-row row">
+    <div class="form-group col6">
+      <input
+      type="email"
+      placeholder="email"
+      class="form-control"
+      ngModel
+      name="email"
+      required
+      >
+    </div>
+
+    <div class="form-group col6">
+      <input
+      type="password"
+      placeholder="password"
+      class="form-control"
+      ngModel
+      name="password"
+      required
+      >
+    </div>
+    <span *ngIf="authGroup.invalid && authGroup.touched">Dati non corretti</span>
+  </div>
+
+    <div class="form-group col6">
+      <select name="city" ngModel class="form-control">
+        <option selected value="">--scegli città--</option>
+        <option value="milano">Milano</option>
+        <option value="roma">Roma</option>
+        <option value="napoli">Napoli</option>
+      </select>
+      <span></span>
+    </div>
+
+    <div class="form-group">
+
+      <div class="form-check">
+        <!--in quest'area stiamo semplicemente generando un input radio per ogni genere nell'array generi-->
+        <div *ngFor="let genere of generi">
+          <label class="form-check-label" [for]="genere">{{genere}}</label>
+
+          <input type="radio"
+          [id]="genere" [value]="genere"
+          ngModel name="genere" class="form-check-input">
+        </div>
+      </div>
+
+    </div>
+
+
+    <button [disabled]="f.invalid" class="btn btn-primary">invia</button>
+
+    <button type="button" class="btn btn-danger"
+      (click)="setDati()"
+      >Fill</button>
+
+</form>
+
