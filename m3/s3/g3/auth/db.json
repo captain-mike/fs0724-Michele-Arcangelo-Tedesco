@@ -5,6 +5,12 @@
       "password": "$2a$10$M7xEYkRFhRbqUypFw/pl1ON/Vi2/tLp1cloS9/e2D4TZMwrG8gPLS",
       "name": "Nostrud aspernatur a",
       "id": 1
+    },
+    {
+      "email": "quloz@mailinator.com",
+      "password": "$2a$10$CWVJQhmeg3JpR7rWa.2kJOLyIm5EeZXncn6UPnxYa5RRgHsemIXzm",
+      "name": "Vel occaecat volupta",
+      "id": 2
     }
   ],
   "pizze": []

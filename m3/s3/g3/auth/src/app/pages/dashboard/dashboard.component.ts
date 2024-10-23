@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { iUser } from '../../interfaces/i-user';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +24,8 @@ export class DashboardComponent {
       this.user = user;
 
     })
+
+
 
   }
 

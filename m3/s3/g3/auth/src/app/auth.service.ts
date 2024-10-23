@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { environment } from '../../environments/environment.development';
 import { BehaviorSubject, map, tap } from 'rxjs';
-import { IAccessData } from '../interfaces/i-access-data';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { iUser } from '../interfaces/i-user';
-import { iLoginRequest } from '../interfaces/ilogin-request';
+import { environment } from '../environments/environment.development';
+import { IAccessData } from './interfaces/i-access-data';
+import { iUser } from './interfaces/i-user';
+import { iLoginRequest } from './interfaces/ilogin-request';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,8 @@ export class AuthService {
   ) {
 
     this.restoreUser()//avvio questo metodo per recuperare i dati dell'utente in caso di reload
+
+    this.http.get('http://localhost:3000/users').subscribe()
 
    }
 
