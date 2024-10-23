@@ -25,10 +25,14 @@
       </ul>
 
       <div class="text-end">
-        <a
+        <a *ngIf="!isLoggedIn"
         routerLink="/auth/login"
         type="button" class="btn btn-outline-light me-2">Login</a>
-        <a routerLink="/auth/register" type="button" class="btn btn-warning">Sign-up</a>
+        <a *ngIf="!isLoggedIn" routerLink="/auth/register" type="button" class="btn btn-warning">Sign-up</a>
+        <button
+        *ngIf="isLoggedIn"
+        (click)="logout()"
+        class="btn btn-warning">Logout</button>
       </div>
     </div>
   </div>

@@ -1,4 +1,11 @@
 {
-  "users":[],
-  "pizze":[]
+  "users": [
+    {
+      "email": "pemiq@mailinator.com",
+      "password": "$2a$10$M7xEYkRFhRbqUypFw/pl1ON/Vi2/tLp1cloS9/e2D4TZMwrG8gPLS",
+      "name": "Nostrud aspernatur a",
+      "id": 1
+    }
+  ],
+  "pizze": []
 }

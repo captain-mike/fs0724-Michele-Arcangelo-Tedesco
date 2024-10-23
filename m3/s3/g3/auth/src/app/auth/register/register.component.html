@@ -1,1 +1,13 @@
-<p>register works!</p>
+<div class="container">
+
+  <h1>Registrati</h1>
+  <form>
+
+    <input type="text" class="form-control mb-3" placeholder="Nome" name="nome" [(ngModel)]="formData.name">
+    <input type="email" class="form-control mb-3" placeholder="Email" name="email" [(ngModel)]="formData.email">
+    <input type="password" class="form-control mb-3" placeholder="Password" name="password" [(ngModel)]="formData.password">
+    <button (click)="register()" class="btn btn-success">Registrati</button>
+
+  </form>
+
+</div>
