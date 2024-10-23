@@ -18,13 +18,14 @@ export class AuthGuard{
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): MaybeAsync<GuardResult> {
 
-    return this.authSvc.isLoggedIn$.pipe(map(isLoggedIn => {
+    return this.authSvc.isLoggedIn$.pipe(map(isLoggedIn => {//mi interfaccio con isLoggedIn$ che contiene un observable attraverso il quale transitano dati boolean
 
       if(!isLoggedIn){
         this.router.navigate(['/auth/login'])
       }
 
-     return isLoggedIn
+     return isLoggedIn//true se l'utente è loggato, false se non lo è.
+     //false butta fuori l'utente dalle rote protette da questa guard
     }))
 
   }
