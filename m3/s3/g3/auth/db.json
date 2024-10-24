@@ -11,6 +11,12 @@
       "password": "$2a$10$CWVJQhmeg3JpR7rWa.2kJOLyIm5EeZXncn6UPnxYa5RRgHsemIXzm",
       "name": "Vel occaecat volupta",
       "id": 2
+    },
+    {
+      "email": "pyqyfoke@mailinator.com",
+      "password": "$2a$10$MJsQhYOPwPoZ8GT4T4dypOXxyrALkNNDPBZNE1PCBoU/WoCsgVk2.",
+      "name": "Reprehenderit quia ",
+      "id": 3
     }
   ],
   "pizze": []

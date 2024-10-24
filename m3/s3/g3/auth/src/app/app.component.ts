@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
+  constructor(
+    private http:HttpClient
+  ){}
   title = 'auth';
+
+  ngOnInit(){
+    // this.http.get('http://localhost:3000/pizze').subscribe()
+  }
 }

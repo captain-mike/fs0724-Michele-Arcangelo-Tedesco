@@ -41,8 +41,6 @@ export class AuthService {
 
     this.restoreUser()//avvio questo metodo per recuperare i dati dell'utente in caso di reload
 
-    this.http.get('http://localhost:3000/users').subscribe()
-
    }
 
 
