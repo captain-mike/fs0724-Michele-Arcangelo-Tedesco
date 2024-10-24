@@ -22,11 +22,13 @@ export class AuthService {
 
   user$ = this.authSubject$.asObservable()//contiene dati sull'utente se è loggato
   .pipe(
-    tap(accessData => this.isLoggedIn == !!accessData),
-    map(accessData => accessData?.user)
+    tap(accessData => this.isLoggedIn = !!accessData),
+    map(accessData => {
+      return accessData ? accessData.user : null
+    })
   )
 
-  isLoggedIn$ = this.authSubject$
+  isLoggedIn$ = this.authSubject$.asObservable()
   .pipe(map(accessData => !!accessData))//serve per la verifica, capta la presenza(o meno) dello user e mi restituisce un bool (false se il subject riceve null)
 
 
@@ -56,7 +58,7 @@ export class AuthService {
       localStorage.setItem('accessData',JSON.stringify(accessData))//salvo lo user per poterlo recuperare se si ricarica la pagina
 
       //Recupero la data di scadenza del token
-      const expDate = this.jwtHelper.getTokenExpirationDate(accessData.accessToken)
+      const expDate:Date|null = this.jwtHelper.getTokenExpirationDate(accessData.accessToken)
 
       //se c'è un errore con la data blocca la funzione
       if(!expDate) return
@@ -70,11 +72,12 @@ export class AuthService {
   logout(){
     this.authSubject$.next(null)//comunico al behaviorsubject che il valore da propagare è null
     localStorage.removeItem('accessData')//elimino i dati salvati in localstorage
-    this.router.navigate(['/auth/login']);//redirect al login
+    this.router.navigate(['/auth/login'])//redirect al login
   }
 
   autoLogout(expDate:Date){
-    // clearTimeout(this.autoLogoutTimer)
+    // clearTimeout(this.autoLogoutTimer) qualora volessi bloccare il timeout
+
     const expMs = expDate.getTime() - new Date().getTime()//sottraggo i ms della data attuale da quelli della data del jwt
 
     this.autoLogoutTimer = setTimeout(()=>{//avvio un timer che fa logout allo scadere del tempo
